@@ -1,0 +1,6 @@
+﻿  Game.cpp
+c:\users\user\documents\информатика\змейка\snake\snake\game.cpp(15): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "pch.h"' to your source?
+  Game_borderless.cpp
+c:\users\user\documents\информатика\змейка\snake\snake\game_borderless.cpp(63): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "pch.h"' to your source?
+  main.cpp
+c:\users\user\documents\информатика\змейка\snake\snake\main.cpp(10): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "pch.h"' to your source?

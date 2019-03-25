@@ -1,0 +1,13 @@
+﻿  Game.cpp
+c:\users\user\documents\информатика\змейка\snake\snake\snake.h(20): warning C4018: '<': signed/unsigned mismatch
+c:\users\user\documents\информатика\змейка\snake\snake\snake.h(95): warning C4018: '<=': signed/unsigned mismatch
+  Game_borderless.cpp
+c:\users\user\documents\информатика\змейка\snake\snake\snake.h(20): warning C4018: '<': signed/unsigned mismatch
+c:\users\user\documents\информатика\змейка\snake\snake\snake.h(95): warning C4018: '<=': signed/unsigned mismatch
+c:\users\user\documents\информатика\змейка\snake\snake\game_borderless.cpp(51): warning C4244: '=': conversion from 'sf::Int32' to 'float', possible loss of data
+  main.cpp
+c:\program files\sfml-2.5.1\include\sfml\graphics\rect.inl(81): error C2589: '(': illegal token on right side of '::'
+c:\program files\sfml-2.5.1\include\sfml\graphics\rect.inl(114): error C2589: '(': illegal token on right side of '::'
+c:\users\user\documents\информатика\змейка\snake\snake\snake.h(20): warning C4018: '<': signed/unsigned mismatch
+c:\users\user\documents\информатика\змейка\snake\snake\snake.h(95): warning C4018: '<=': signed/unsigned mismatch
+  Generating Code...
