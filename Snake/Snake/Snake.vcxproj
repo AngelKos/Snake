@@ -167,15 +167,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Block.cpp" />
+    <ClCompile Include="Border.cpp" />
+    <ClCompile Include="Button.cpp" />
     <ClCompile Include="Game.cpp" />
-    <ClCompile Include="Game_borderless.cpp" />
+    <ClCompile Include="Game_bordered.cpp" />
+    <ClCompile Include="Game_leveled.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Simple_apple.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Apple.h" />
+    <ClInclude Include="Block.h" />
+    <ClInclude Include="Border.h" />
+    <ClInclude Include="Button.h" />
     <ClInclude Include="Game.h" />
-    <ClInclude Include="Game_borderless.h" />
+    <ClInclude Include="Game_bordered.h" />
+    <ClInclude Include="Game_leveled.h" />
     <ClInclude Include="Simple_apple.h" />
     <ClInclude Include="Snake.h" />
   </ItemGroup>

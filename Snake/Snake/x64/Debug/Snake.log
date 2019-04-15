@@ -1,26 +1,6 @@
-﻿  Game_borderless.cpp
+﻿  Game_bordered.cpp
 c:\users\user\documents\informatics\snake\snake\snake.h(12): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
 c:\users\user\documents\informatics\snake\snake\snake.h(178): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-c:\users\user\documents\informatics\snake\snake\game_borderless.cpp(37): warning C4244: 'argument': conversion from 'double' to 'DWORD', possible loss of data
-c:\users\user\documents\informatics\snake\snake\game_borderless.cpp(63): warning C4244: '=': conversion from 'sf::Int32' to 'float', possible loss of data
-c:\users\user\documents\informatics\snake\snake\game_borderless.cpp(78): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-c:\users\user\documents\informatics\snake\snake\game_borderless.cpp(80): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-c:\users\user\documents\informatics\snake\snake\game_borderless.cpp(84): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-c:\users\user\documents\informatics\snake\snake\game_borderless.cpp(86): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
+c:\users\user\documents\informatics\snake\snake\game_bordered.cpp(45): warning C4244: 'argument': conversion from 'double' to 'DWORD', possible loss of data
+c:\users\user\documents\informatics\snake\snake\game_bordered.cpp(71): warning C4244: '=': conversion from 'sf::Int32' to 'float', possible loss of data
   Snake.vcxproj -> C:\Users\User\Documents\Informatics\Snake\x64\Debug\Snake.exe

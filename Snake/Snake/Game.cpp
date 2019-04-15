@@ -8,7 +8,7 @@ Game::Game()
 
 Game::~Game() {};
 
-void Game::Finish()
+void Game::Finish(bool Collided)
 {
 	run = false;
 };

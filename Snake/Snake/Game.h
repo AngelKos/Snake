@@ -5,15 +5,14 @@
 #include <SFML/Graphics.hpp>
 class Game
 {
-protected:
+public:
 	Snake player;
 	std::vector <Simple_apple> apples;
 	sf::RenderWindow window;
-public:
 	bool run;
 	virtual bool Iteration(int turn, sf::RenderWindow* window) = 0;
 	virtual bool Execute() = 0;
-	void Finish();
+	virtual void Finish(bool Collided);
 	Game();
 	~Game();
 };

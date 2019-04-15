@@ -107,8 +107,8 @@ private:
 		if (coord_start.first < 10 || coord_start.first > 790 || coord_start.second < 10 || coord_start.second > 590) b = true;
 		return b;
 	}
-	int direction;
 public:
+	int direction;
 	std::pair<int, int> coord_start;
 	std::pair<int, int> coord_finish;
 	std::pair<int, int> speed;
