@@ -2,7 +2,7 @@
 
 
 
-Game_leveled::Game_leveled()
+Game_leveled::Game_leveled(sf::RenderWindow* window) : Game_bordered(window)
 {
 	level = 0;
 	Levels.push_back({ Block(std::make_pair(250, 100), std::make_pair(300, 20)), Block(std::make_pair(250, 500), std::make_pair(300, 20)), Block(std::make_pair(100, 200), std::make_pair(20, 200)), Block(std::make_pair(700, 200), std::make_pair(20, 200)) });
@@ -19,7 +19,7 @@ bool Game_leveled::Collided()
 	bool coll = false;
 	for (int i = 0; i < Levels[level].size(); i++)
 	{
-		Levels[level][i].Draw(&window);
+		Levels[level][i].Draw(window);
 		if (Levels[level][i].Collided(player.coord_start.first, player.coord_start.second)) coll = true;
 	}
 	return (coll || border.Collided(player.coord_start.first, player.coord_start.second));
@@ -44,11 +44,11 @@ void Game_leveled::Finish(bool Collided)
 	}
 }
 
-bool Game_leveled::Iteration(int turn, sf::RenderWindow* win)
+bool Game_leveled::Iteration(int turn)
 {
 	for (int i = 0; i < Levels[level].size(); i++)
 	{
-		Levels[level][i].Draw(win);
+		Levels[level][i].Draw(window);
 	}
 	if (apples.size() < 10)
 	{
@@ -69,7 +69,7 @@ bool Game_leveled::Iteration(int turn, sf::RenderWindow* win)
 				if (Levels[level][i].Collided(x, y)) coll = true;
 			}
 		}
-		apples.push_back(Simple_apple(5, x, y, 5, win));
+		apples.push_back(Simple_apple(5, x, y, 5, window));
 	}
 	for (int i = 0; i < apples.size(); i++)
 	{

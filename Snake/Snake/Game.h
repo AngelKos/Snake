@@ -8,12 +8,12 @@ class Game
 public:
 	Snake player;
 	std::vector <Simple_apple> apples;
-	sf::RenderWindow window;
+	sf::RenderWindow* window;
 	bool run;
-	virtual bool Iteration(int turn, sf::RenderWindow* window) = 0;
+	virtual bool Iteration(int turn) = 0;
 	virtual bool Execute() = 0;
 	virtual void Finish(bool Collided);
-	Game();
+	Game(sf::RenderWindow* window);
 	~Game();
 };
 

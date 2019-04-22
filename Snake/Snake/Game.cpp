@@ -1,8 +1,9 @@
 #include "Game.h"
 
 
-Game::Game()
+Game::Game(sf::RenderWindow* window)
 {
+	this->window = window;
 	run = true;
 };
 

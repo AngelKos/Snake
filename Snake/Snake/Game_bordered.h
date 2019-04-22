@@ -6,10 +6,10 @@ class Game_bordered : public Game
 {
 public:
 	Border border;
-	Game_bordered();
+	Game_bordered(sf::RenderWindow* window);
 	Game_bordered(const Game_bordered &);
 	~Game_bordered();
-	bool Iteration(int turn, sf::RenderWindow* win) override;
+	bool Iteration(int turn) override;
 	bool Execute() override;
 	virtual bool Collided();
 };

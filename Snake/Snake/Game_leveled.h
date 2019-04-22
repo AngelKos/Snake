@@ -5,10 +5,10 @@ class Game_leveled : public Game_bordered
 	std::vector<std::vector<Block>> Levels;
 	int level;
 public:
-	Game_leveled();
+	Game_leveled(sf::RenderWindow* window);
 	~Game_leveled();
 	bool Collided() override;
 	void Finish(bool Collided) override;
-	bool Iteration(int turn, sf::RenderWindow* win) override;
+	bool Iteration(int turn) override;
 };
 

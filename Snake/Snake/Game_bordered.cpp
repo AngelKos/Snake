@@ -1,12 +1,12 @@
 #include "Game_bordered.h"
 #include <sstream>
 
-Game_bordered::Game_bordered() : Game() 
+Game_bordered::Game_bordered(sf::RenderWindow* window) : Game(window) 
 {
 	border = Border(800, 600);
 }
 
-Game_bordered::Game_bordered(const Game_bordered &) : Game() {}
+Game_bordered::Game_bordered(const Game_bordered &) : Game(window) {}
 
 Game_bordered::~Game_bordered() {}
 
@@ -15,11 +15,11 @@ bool Game_bordered::Collided()
 	return border.Collided(player.coord_start.first, player.coord_start.second);
 }
 
-bool Game_bordered::Iteration(int turn, sf::RenderWindow* win)
+bool Game_bordered::Iteration(int turn)
 {
 	if (apples.size() < 10)
 	{
-		apples.push_back(Simple_apple(5, (rand() % 79) * 10, (rand() % 59) * 10, 5, win));
+		apples.push_back(Simple_apple(5, (rand() % 79) * 10, (rand() % 59) * 10, 5, window));
 	}
 	for (int i = 0; i < apples.size(); i++)
 	{
@@ -35,11 +35,10 @@ bool Game_bordered::Iteration(int turn, sf::RenderWindow* win)
 
 bool Game_bordered::Execute()
 {
-	sf::RenderWindow window(sf::VideoMode(800, 600), "Snake");
-	player = Snake(800 / 2, 600 / 2, &window);
+	player = Snake(800 / 2, 600 / 2, window);
 	std::srand((unsigned int)time(0));
 	double sleep = 100;
-	while (run && window.isOpen())
+	while (run && window->isOpen())
 	{
 		sleep = (100 - (player.length - 10) > 0)? 100 - (player.length - 10) : 10;
 		Sleep(sleep);// Создаем главное окно приложения
@@ -49,13 +48,13 @@ bool Game_bordered::Execute()
 		sf::Clock clock;
 		float time;
 		// Включаем вертикальную синхронизацию (для плавной анимации)
-		window.setVerticalSyncEnabled(true);
+		window->setVerticalSyncEnabled(true);
 
-		while (window.pollEvent(event))
+		while (window->pollEvent(event))
 		{
 			if (event.type == sf::Event::Closed ||
 				(event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Escape))
-				window.close();
+				window->close();
 			else if (event.type == sf::Event::KeyPressed)
 			{
 				switch (event.key.code)
@@ -67,24 +66,24 @@ bool Game_bordered::Execute()
 				}
 			}
 		}
-		window.clear();
+		window->clear();
 		time = clock.getElapsedTime().asMilliseconds();
 		clock.restart();
 		// Тут будут вызываться функции обновления и отрисовки объектов
-		if (Iteration(turn, &window))
+		if (Iteration(turn))
 		{
 			player.Draw();
 		}
 		else
 		{
 			Finish(true);
-			window.clear();
+			window->clear();
 			break;
 		}
 		if ((player.length - 10) >= 50)
 		{
 			Finish(false);
-			window.clear();
+			window->clear();
 			continue;
 		}
 		/*for (int i = 0; i < 800; i+=10)
@@ -103,7 +102,7 @@ bool Game_bordered::Execute()
 				window.draw(square);
 			}
 		}*/
-		border.Draw(&window);
+		border.Draw(window);
 		sf::Font font;
 		font.loadFromFile("C:\\Users\\User\\Documents\\Informatics\\Snake\\a_Futurica.ttf");
 		sf::Text text("" , font, 20);
@@ -112,9 +111,9 @@ bool Game_bordered::Execute()
 		std::ostringstream playerScore;
 		playerScore << player.length - 10;
 		text.setString("Scores:" + playerScore.str());
-		window.draw(text);
+		window->draw(text);
 		// Отрисовка
-		window.display();
+		window->display();
 	}
 	return 0;
 }
